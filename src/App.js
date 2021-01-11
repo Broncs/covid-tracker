@@ -38,6 +38,7 @@ class App extends React.Component {
         <Paper>
           <div className={styles.container}>
             <Switch
+              color="primary"
               className={styles.toggle}
               checked={darkMode}
               onChange={() => this.setState({ darkMode: !darkMode })}

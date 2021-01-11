@@ -42,7 +42,7 @@ const Cards = ({
               {new Date(lastUpdate).toDateString()}
             </Typography>
             <Typography variant="body2">
-              Number of active cases of Covid-19
+              Number of active cases from COVID-19.
             </Typography>
           </CardContent>
         </Grid>
@@ -59,7 +59,7 @@ const Cards = ({
         >
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
-              recoveried
+              Recovered
             </Typography>
             <Typography variant="h5">
               <CountUp
@@ -73,7 +73,7 @@ const Cards = ({
               {new Date(lastUpdate).toDateString()}
             </Typography>
             <Typography variant="body2">
-              Number of recoveries Covid-19
+              Number of recoveries from COVID-19.
             </Typography>
           </CardContent>
         </Grid>
@@ -104,7 +104,7 @@ const Cards = ({
               {new Date(lastUpdate).toDateString()}
             </Typography>
             <Typography variant="body2">
-              Number of deaths cause by Covid-19
+              Number of deaths caused by COVID-19.
             </Typography>
           </CardContent>
         </Grid>
