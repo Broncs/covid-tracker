@@ -5,7 +5,10 @@ import cx from "classnames";
 
 import styles from "./Cards.module.css";
 
-const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
+const Cards = ({
+  data: { confirmed, recovered, deaths, lastUpdate },
+  darkMode,
+}) => {
   if (!confirmed) {
     return "Loading ...";
   }
@@ -17,7 +20,11 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
           component={Card}
           xs={12}
           md={3}
-          className={cx(styles.card, styles.infected)}
+          className={cx(
+            styles.card,
+            styles.infected,
+            darkMode && styles.cardDark
+          )}
         >
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
@@ -44,7 +51,11 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
           component={Card}
           xs={12}
           md={3}
-          className={cx(styles.card, styles.recovered)}
+          className={cx(
+            styles.card,
+            styles.recovered,
+            darkMode && styles.cardDark
+          )}
         >
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
@@ -71,7 +82,11 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
           component={Card}
           xs={12}
           md={3}
-          className={cx(styles.card, styles.deaths)}
+          className={cx(
+            styles.card,
+            styles.deaths,
+            darkMode && styles.cardDark
+          )}
         >
           <CardContent>
             <Typography color="textSecondary" gutterBottom>

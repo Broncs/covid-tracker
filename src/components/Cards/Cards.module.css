@@ -5,6 +5,9 @@
 .card {
   margin: 0 2% !important;
 }
+.cardDark {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
 
 .infected {
   border-bottom: 10px solid rgba(0, 0, 255, 0.5);

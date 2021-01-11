@@ -4,7 +4,11 @@ import { Line, Bar } from "react-chartjs-2";
 
 import styles from "./Chart.module.css";
 
-const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
+const Chart = ({
+  data: { confirmed, recovered, deaths },
+  country,
+  darkMode,
+}) => {
   const [dailyData, setDailyData] = useState([]);
 
   useEffect(() => {
@@ -24,17 +28,41 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
             data: dailyData.map(({ confirmed }) => confirmed),
             label: "Infected",
             borderColor: "#3333ff",
+            fontColor: "#222222",
             fill: true,
           },
           {
             data: dailyData.map(({ deaths }) => deaths),
-            label: "Infected",
+            label: "Deaths",
             borderColor: "red",
             backgroundColor: "rgba(255,0,0,0.5)",
 
             fill: true,
           },
         ],
+      }}
+      options={{
+        legend: {
+          labels: {
+            fontColor: darkMode ? "#fff" : "#333",
+          },
+        },
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                fontColor: darkMode ? "#fff" : "#333",
+              },
+            },
+          ],
+          xAxes: [
+            {
+              ticks: {
+                fontColor: darkMode ? "#fff" : "#333",
+              },
+            },
+          ],
+        },
       }}
     />
   ) : null;
@@ -57,7 +85,27 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
       }}
       options={{
         legend: { display: false },
-        title: { display: true, text: `Current State in ${country}` },
+        title: {
+          display: true,
+          text: `Current State in ${country}`,
+          fontColor: darkMode ? "#fff" : "#333",
+        },
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                fontColor: darkMode ? "#fff" : "#333",
+              },
+            },
+          ],
+          xAxes: [
+            {
+              ticks: {
+                fontColor: darkMode ? "#fff" : "#333",
+              },
+            },
+          ],
+        },
       }}
     />
   ) : null;
